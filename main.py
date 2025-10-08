@@ -8,6 +8,8 @@ from asteroid import Asteroid
 
 from asteroidfield import AsteroidField
 
+from shot import Shot
+
 import sys
 
 def main():
@@ -27,16 +29,19 @@ def main():
     # updatable: objects that can be updated
     # drawable: objects that can be drawn
     # asteroids contain...asteroids
+    # shots contain...shots
 
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
 
     # Setting Player class in updatable and drawable
 
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    Shot.containers = (shots, updatable, drawable)
 
     # Instantiating a Player object
 
